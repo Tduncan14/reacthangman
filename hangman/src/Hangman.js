@@ -43,6 +43,16 @@ class Hangman extends Component {
       nWrong: st.nWrong + (st.answer.includes(ltr) ? 0 : 1)
     }));
   }
+  
+   reset =() =>{
+
+    this.setState({
+      nWrong:0,
+      guessed:new Set,
+      answer:randomWord()
+    })
+
+   }
 
   /** generateButtons: return array of letter buttons to render */
   generateButtons() {
@@ -73,7 +83,10 @@ class Hangman extends Component {
     }</p>
         <p className='Hangman-btns'>
         {gameOver ? `The answer is ${this.state.answer}` :
-        this.generateButtons() }</p>
+        this.generateButtons() }</p><button onClick={this.reset}>
+          Restart
+        </button>
+
       </div>
     );
   }
