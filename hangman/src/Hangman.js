@@ -83,7 +83,7 @@ class Hangman extends Component {
     }</p>
         <p className='Hangman-btns'>
         {gameOver ? `The answer is ${this.state.answer}` :
-        this.generateButtons() }</p><button onClick={this.reset}>
+        this.generateButtons() }</p><button id="reset" onClick={this.reset}>
           Restart
         </button>
 
